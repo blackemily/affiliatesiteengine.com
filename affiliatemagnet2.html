@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Affiliate Site Engine — Free Preview GPT</title>
+  <meta name="description" content="Open the free Affiliate Site Engine Preview GPT to validate a niche, see a mini site architecture sample, and generate one example page." />
+  <link rel="canonical" href="https://affiliatesiteengine.com/" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1b33;
+      --panel2:#0c162b;
+      --text:#eaf0ff;
+      --muted:#b8c4e6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa2ff;
+      --accent2:#9ef0ff;
+      --good:#41d39f;
+      --warn:#ffcc66;
+      --shadow: 0 16px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1040px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 600px at 20% -10%, rgba(122,162,255,.35), transparent 60%),
+        radial-gradient(900px 600px at 80% 0%, rgba(158,240,255,.18), transparent 55%),
+        linear-gradient(180deg, #070b14, var(--bg) 30%, #070b14);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 14px; border:1px solid var(--line); border-radius:999px;
+      background:rgba(15,27,51,.35); backdrop-filter: blur(10px);
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(158,240,255,.75));
+      box-shadow: 0 10px 30px rgba(122,162,255,.25);
+    }
+    .brand b{letter-spacing:.2px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px; border:1px solid var(--line); border-radius:999px;
+      background:rgba(15,27,51,.45);
+      color:var(--muted); font-size:13px;
+    }
+    .pill .dot{width:8px; height:8px; border-radius:99px; background:var(--good); box-shadow:0 0 0 5px rgba(65,211,159,.12)}
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(15,27,51,.55), rgba(12,22,43,.35));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero{margin-top:18px; padding:24px 20px;}
+    h1{
+      margin:10px 0 8px;
+      font-size:40px;
+      line-height:1.06;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){ h1{font-size:32px} }
+    .sub{color:var(--muted); font-size:16px; margin:0 0 16px; max-width: 72ch;}
+    .kicker{color:var(--accent2); font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(158,240,255,.55));
+      color:#061022;
+      font-weight:850;
+      text-decoration:none;
+      box-shadow: 0 12px 40px rgba(122,162,255,.22);
+      transition: transform .08s ease, filter .08s ease;
+    }
+    .btn:hover{transform: translateY(-1px); filter:brightness(1.02)}
+    .btn.secondary{
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      border:1px solid var(--line);
+      box-shadow:none;
+      font-weight:750;
+    }
+    .note{color:var(--muted); font-size:13px}
+    .grid{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .box{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:16px 14px;
+    }
+    .box h2{margin:0 0 8px; font-size:15px}
+    .box ul{margin:0; padding-left:18px; color:var(--muted)}
+    .box li{margin:7px 0}
+    .callout{
+      display:flex; gap:12px; align-items:flex-start;
+      border:1px solid rgba(255,204,102,.35);
+      background: rgba(255,204,102,.08);
+      border-radius: var(--radius);
+      padding:14px 14px;
+      margin-top:14px;
+    }
+    .callout b{display:block; margin-bottom:2px}
+    .tiny{font-size:12.5px; color:var(--muted)}
+    .section{margin-top:14px; padding:18px 20px;}
+    .steps{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px;
+    }
+    @media (max-width: 900px){ .steps{grid-template-columns:1fr} }
+    .step{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:14px 14px;
+    }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:26px; height:26px; border-radius:10px;
+      background: rgba(122,162,255,.18);
+      border:1px solid rgba(122,162,255,.35);
+      margin-bottom:8px;
+      font-weight:850;
+    }
+    details{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:14px 14px;
+      margin:10px 0;
+    }
+    summary{cursor:pointer; font-weight:800; list-style:none;}
+    summary::-webkit-details-marker{display:none}
+    details p{color:var(--muted); margin:10px 0 0}
+    .footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>Affiliate Site Engine</b><br />
+          <span class="tiny">Free Preview GPT</span>
+        </div>
+      </a>
+      <div class="pill" title="Free preview tool">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Free Preview • Start in seconds</span>
+      </div>
+    </div>
+
+    <div class="card hero">
+      <div class="kicker">Start here</div>
+      <h1>Open the <span style="color:var(--accent2)">free Preview GPT</span> and test a niche before you build.</h1>
+      <p class="sub">
+        Affiliate Site Engine is a build system. This free preview tool lets you validate a niche + product, see a small architecture sample,
+        and generate one example page—so you can decide what’s worth building.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn" href="YOUR_PREVIEW_GPT_LINK_HERE" target="_blank" rel="noopener">
+          Open the Free Preview GPT →
+        </a>
+        <a class="btn secondary" href="/engine">
+          What happens after the preview
+        </a>
+        <div class="note">No signup required. Use it like a tool, not a chat.</div>
+      </div>
+
+      <div class="callout">
+        <div aria-hidden="true">ℹ️</div>
+        <div>
+          <b>This preview is intentionally constrained.</b>
+          <div class="tiny">It shows the system’s judgment and structure without generating full sites or batch HTML.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h2>What the Preview GPT does</h2>
+        <ul>
+          <li><b>Validates</b> a niche + 1 affiliate product (or small cluster)</li>
+          <li>Gives a <b>clear verdict</b>: build / don’t build / build with caution</li>
+          <li>Outputs a <b>mini architecture sample</b> (example: 15 pages)</li>
+          <li>Generates <b>one example page</b> (informational/how-to)</li>
+          <li>Explains decisions briefly (intent logic, not lectures)</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>What it does NOT do</h2>
+        <ul>
+          <li>No full 100-page blueprint</li>
+          <li>No internal linking map</li>
+          <li>No money pages in bulk (reviews/best-of)</li>
+          <li>No reusable HTML templates</li>
+          <li>No batching / “continue” loopholes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card section">
+      <div class="kicker">Use it in 60 seconds</div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <b>Choose a niche + product</b>
+          <div class="tiny">Or ask it to suggest a niche based on buyer intent.</div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <b>Get a verdict + mini blueprint</b>
+          <div class="tiny">You’ll see what the site would look like at a small scale.</div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <b>Generate one example page</b>
+          <div class="tiny">A proof page to demonstrate intent-matched structure.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <div class="kicker">FAQ</div>
+
+      <details>
+        <summary>Why keep it limited?</summary>
+        <p>
+          Because the production system is a full build engine. The preview exists to prove judgment and architecture thinking
+          without giving away the factory (full blueprint, internal linking, and batch HTML generation).
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need keywords or word counts?</summary>
+        <p>
+          No. The system uses intent-based sizing and semantic topic clusters. No keyword stuffing, no density games.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this for beginners or experienced marketers?</summary>
+        <p>
+          Both. Beginners get clarity and a working structure. Experienced marketers use it to validate niches and avoid wasted builds.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this guarantee rankings or income?</summary>
+        <p>
+          No. This tool produces real assets and coherent structure. Results depend on niche, competition, publishing, and patience.
+        </p>
+      </details>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> • Affiliate Site Engine</div>
+      <div class="tiny mono">Homepage: <b>/</b> • Learn more: <b>/engine</b></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
